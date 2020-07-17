@@ -11,6 +11,7 @@ const SmurfList = props => {
 
     return (
         <div className='smurf-list'>
+            <h1>Smurfs</h1>
             {props.error && <p className='error'>{props.error}</p>}
             {props.isLoading && <h3>Loading...</h3>}
             {props.smurfs.length > 0 && props.smurfs.map(smurf => (
