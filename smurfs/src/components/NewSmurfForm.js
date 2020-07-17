@@ -41,6 +41,7 @@ const NewSmurfForm = props => {
                     name='name'
                     value={formValues.name}
                     onChange={onInputChange}
+                    data-testid='name'
                 />
             </label>
             <br/>
