@@ -2,8 +2,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 .error {
   color: red;
+}
+
+.smurf {
+  background-color: #62CDFD;
+  width: 400px;
+  margin: 15px auto;
+  padding: 10px;
+  font-size: 20px;
+}
+
+a {
+  color: black;
 }
