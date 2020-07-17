@@ -25,9 +25,10 @@ const NewSmurfForm = props => {
         const newSmurf = {
             name: formValues.name,
             age: parseInt(formValues.age),
-            height: formValues.height
+            height: `${formValues.height}cm`
         }
         props.postSmurf(newSmurf);
+        setFormValues(initialFormValues);
     }
     
     return (
@@ -46,7 +47,7 @@ const NewSmurfForm = props => {
             <br/>
             <label htmlFor='age'>Age:&nbsp;
                 <input 
-                    type='text'
+                    type='number'
                     id='age'
                     name='age'
                     value={formValues.age}
@@ -55,9 +56,9 @@ const NewSmurfForm = props => {
             </label>
             <br/>
             <br/>
-            <label htmlFor='height'>Height:&nbsp;
+            <label htmlFor='height'>Height(cm):&nbsp;
                 <input 
-                    type='text'
+                    type='number'
                     id='height'
                     name='height'
                     value={formValues.height}
@@ -70,7 +71,7 @@ const NewSmurfForm = props => {
             <br/>
             <br/>
             {props.isPosting && <p>Posting...</p>}
-            {props.postError && <p>{props.postError}</p>}
+            {props.formError && <p className='error'>{props.formError}</p>}
         </form>
     )
 }
@@ -78,7 +79,7 @@ const NewSmurfForm = props => {
 const mapStateToProps = state => {
     return {
         isPosting: state.isPosting,
-        postError: state.postError
+        formError: state.formError
     }
 }
 

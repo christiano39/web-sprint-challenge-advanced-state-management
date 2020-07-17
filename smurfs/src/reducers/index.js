@@ -11,7 +11,7 @@ const initialState = {
     smurfs: [],
     isLoading: false,
     error: '',
-    postError: '',
+    formError: '',
     isPosting: false
 }
 
@@ -40,20 +40,20 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isPosting: true,
-                postError: ''
+                formError: ''
             }
         case POST_SMURF_SUCCESS:
             return {
                 ...state,
                 isPosting: false,
-                postError: '',
+                formError: '',
                 smurfs: action.payload
             }
         case POST_SMURF_FAIL:
             return {
                 ...state,
                 isPosting: false,
-                postError: action.payload
+                formError: action.payload
             }
         default:
             return state;
